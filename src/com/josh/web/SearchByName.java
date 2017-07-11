@@ -35,14 +35,12 @@ public class SearchByName extends HttpServlet {
 		PrintWriter writer = response.getWriter();
 		
 		String name = request.getParameter("name");
-//		writer.println(name);
 		
 		try {
 			con = establishConnection();
 			PreparedStatement ps = con.prepareStatement(query);
 			ps.setString(1, name);
 			ResultSet rs = ps.executeQuery();
-//			writer.println(ps.toString());
 			
 			while (rs.next()) {
 				writer.println(rs.getString(1) + ";  "
