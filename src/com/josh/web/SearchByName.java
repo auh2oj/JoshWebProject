@@ -42,16 +42,18 @@ public class SearchByName extends HttpServlet {
 			ps.setString(1, name);
 			ResultSet rs = ps.executeQuery();
 			
-			while (rs.next()) {
-				writer.println(rs.getString(1) + ";  "
-				+ rs.getString(2) + ";  "
-				+ rs.getString(3) + ";  "
-				+ rs.getString(4));
+			if (!rs.next()) {
+				writer.println("Person does not exist in the database.");
+			} else {
+				rs.beforeFirst();
+				while (rs.next()) {
+					writer.println(rs.getString(1) + ";  "
+					+ rs.getString(2) + ";  "
+					+ rs.getString(3) + ";  "
+					+ rs.getString(4));
+				}
 			}
-			
 			con.close();
-
-
 			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
