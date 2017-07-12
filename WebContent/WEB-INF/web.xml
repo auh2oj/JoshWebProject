@@ -51,13 +51,13 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>updateInfo</display-name>
-    <servlet-name>updateInfo</servlet-name>
-    <servlet-class>com.josh.web.updateInfo</servlet-class>
+    <display-name>UpdateInfo</display-name>
+    <servlet-name>UpdateInfo</servlet-name>
+    <servlet-class>com.josh.web.UpdateInfo</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>updateInfo</servlet-name>
-    <url-pattern>/updateInfo</url-pattern>
+    <servlet-name>UpdateInfo</servlet-name>
+    <url-pattern>/UpdateInfo</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

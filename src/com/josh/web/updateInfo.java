@@ -17,20 +17,20 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class updateInfo
  */
-public class updateInfo extends HttpServlet {
+public class UpdateInfo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public updateInfo() {
+    public UpdateInfo() {
         super();
     }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter writer = response.getWriter();
 		String name = request.getParameter("name");
 		String surname = request.getParameter("surname");
@@ -62,17 +62,17 @@ public class updateInfo extends HttpServlet {
 					String dispatchURL = "";
 					switch (info) {
 					case "Email":
-						dispatchURL = "UpdateEmail";
+						dispatchURL = "/UpdateEmail";
 						break;
 					case "Password":
-						dispatchURL = "UpdatePassword";
+						dispatchURL = "/UpdatePassword";
 						break;
 					case "Occupation":
-						dispatchURL = "UpdateOccupation";
+						dispatchURL = "/UpdateOccupation";
 						break;
 					}
 					writer.println(dispatchURL);
-					RequestDispatcher view = request.getRequestDispatcher(dispatchURL);
+					RequestDispatcher view = request.getRequestDispatcher("/update" + dispatchURL + ".html");
 					view.forward(request, response);
 				}
 			}
@@ -85,24 +85,6 @@ public class updateInfo extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-
-
-	}
-
-	private void updateOccupation() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private void updatePassword() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private void updateEmail() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
