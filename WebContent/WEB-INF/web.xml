@@ -49,4 +49,14 @@
     <servlet-name>GetNames</servlet-name>
     <url-pattern>/GetNames</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>updateInfo</display-name>
+    <servlet-name>updateInfo</servlet-name>
+    <servlet-class>com.josh.web.updateInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateInfo</servlet-name>
+    <url-pattern>/updateInfo</url-pattern>
+  </servlet-mapping>
 </web-app>
