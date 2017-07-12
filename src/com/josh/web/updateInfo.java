@@ -57,7 +57,10 @@ public class UpdateInfo extends HttpServlet {
 				rs.next();
 				password = rs.getString(1);
 				if (!password.equals(enteredPswd)) {
-					writer.println("Incorrect password.");
+					writer.println("Incorrect password. Please try again.");
+					response.setContentType("text/html");
+					RequestDispatcher view = request.getRequestDispatcher("/update.html");
+					view.include(request, response);
 				} else {
 					String dispatchURL = "";
 					switch (info) {
@@ -72,8 +75,9 @@ public class UpdateInfo extends HttpServlet {
 						break;
 					}
 					writer.println(dispatchURL);
-					RequestDispatcher view = request.getRequestDispatcher("/update" + dispatchURL + ".html");
-					view.forward(request, response);
+					response.sendRedirect("update" + dispatchURL + ".html");
+//					RequestDispatcher view = request.getRequestDispatcher("/update" + dispatchURL + ".html");
+//					view.forward(request, response);
 				}
 			}
 			con.close();
