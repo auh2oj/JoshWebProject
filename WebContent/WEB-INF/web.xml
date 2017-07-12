@@ -59,4 +59,14 @@
     <servlet-name>updateInfo</servlet-name>
     <url-pattern>/updateInfo</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateOccupation</display-name>
+    <servlet-name>UpdateOccupation</servlet-name>
+    <servlet-class>com.josh.web.UpdateOccupation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateOccupation</servlet-name>
+    <url-pattern>/UpdateOccupation</url-pattern>
+  </servlet-mapping>
 </web-app>
