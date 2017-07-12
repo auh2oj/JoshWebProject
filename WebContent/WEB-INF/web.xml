@@ -69,4 +69,34 @@
     <servlet-name>UpdateOccupation</servlet-name>
     <url-pattern>/UpdateOccupation</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateOccupationServlet</display-name>
+    <servlet-name>UpdateOccupationServlet</servlet-name>
+    <servlet-class>com.josh.web.UpdateOccupation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateOccupationServlet</servlet-name>
+    <url-pattern>/UpdateOccupationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateEmail</display-name>
+    <servlet-name>UpdateEmail</servlet-name>
+    <servlet-class>com.josh.web.UpdateEmail</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateEmail</servlet-name>
+    <url-pattern>/UpdateEmail</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdatePassword</display-name>
+    <servlet-name>UpdatePassword</servlet-name>
+    <servlet-class>com.josh.web.UpdatePassword</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdatePassword</servlet-name>
+    <url-pattern>/UpdatePassword</url-pattern>
+  </servlet-mapping>
 </web-app>
