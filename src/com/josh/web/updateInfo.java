@@ -75,18 +75,16 @@ public class UpdateInfo extends HttpServlet {
 						break;
 					}
 					writer.println(dispatchURL);
-					response.sendRedirect("update" + dispatchURL + ".html");
-//					RequestDispatcher view = request.getRequestDispatcher("/update" + dispatchURL + ".html");
+					response.sendRedirect("update" + dispatchURL + ".jsp");
+//					RequestDispatcher view = request.getRequestDispatcher("/update" + dispatchURL + ".jsp");
 //					view.forward(request, response);
 				}
 			}
 			con.close();
 			
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
