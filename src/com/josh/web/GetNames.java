@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -35,9 +36,12 @@ public class GetNames extends HttpServlet {
 		PrintWriter writer = response.getWriter();
 		String pswdAttempt = request.getParameter("password");
 		
+		response.setContentType("text/html");
+
 		//authenticate
 		if (!password.equals(pswdAttempt)) {
 			writer.println("Access denied.");
+			writer.println("<br><a href='index.html'>Back</a>");
 			return;
 		}
 		
@@ -50,17 +54,22 @@ public class GetNames extends HttpServlet {
 			PreparedStatement ps = con.prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
 			
+			request.setAttribute("records", rs);
+			RequestDispatcher view = request.getRequestDispatcher("AllRecords.jsp");
+			view.forward(request, response);
+			
 			if (!rs.next()) {
 				writer.println("This database is empty.");
 			} else {
 				rs.beforeFirst();
 				while (rs.next()) {
 					writer.println(rs.getString(1) + " "
-					+ rs.getString(2) + "\n"
-					+ rs.getString(3) + "\n"
-					+ rs.getString(4) + "\n");
+					+ rs.getString(2) + "<br>"
+					+ rs.getString(3) + "<br>"
+					+ rs.getString(4) + "<br><br>");
 				}
 			}
+			writer.println("\n<a href='index.html'>Back</a>");
 			con.close();
 			
 		} catch (ClassNotFoundException e) {

@@ -35,6 +35,7 @@ public class SearchByName extends HttpServlet {
 		PrintWriter writer = response.getWriter();
 		
 		String name = request.getParameter("name");
+		response.setContentType("text/html");
 		
 		try {
 			con = establishConnection();
@@ -53,6 +54,7 @@ public class SearchByName extends HttpServlet {
 					+ rs.getString(4));
 				}
 			}
+			writer.println("<br><br><a href='index.html'>Back</a>");
 			con.close();
 			
 		} catch (ClassNotFoundException e) {

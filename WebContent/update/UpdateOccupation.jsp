@@ -11,7 +11,7 @@
 Please re-enter your name, and enter a new occupation:
 <form action="/JoshWebProject/UpdateOccupation" method="post">
 
-Name: <input type="text" name="name" /><br>
+Name: <input type="text" name="name" /><br> <% //Really not the best way to do this %>
 Surname: <input type="text" name="surname" /><br>
 New Occupation: <input type="text" name="newoccupation" /><br/>
 
